@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedStoreAPI.Domain\MedStoreAPI.Domain.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Dtos\MedStoreAPI.Dtos.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Entities\MedStoreAPI.Entities.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Common\MedStoreAPI.Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,565 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.API\\MedStoreAPI.API.csproj": {}
+  },
+  "projects": {
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.API\\MedStoreAPI.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.API\\MedStoreAPI.API.csproj",
+        "projectName": "MedStoreAPI.API",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.API\\MedStoreAPI.API.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Infrastructure\\MedStoreAPI.Infrastructure.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Infrastructure\\MedStoreAPI.Infrastructure.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Service\\MedStoreAPI.Service.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Service\\MedStoreAPI.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj",
+        "projectName": "MedStoreAPI.Common",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj",
+        "projectName": "MedStoreAPI.Domain",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj",
+        "projectName": "MedStoreAPI.Dtos",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj",
+        "projectName": "MedStoreAPI.Entities",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Infrastructure\\MedStoreAPI.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Infrastructure\\MedStoreAPI.Infrastructure.csproj",
+        "projectName": "MedStoreAPI.Infrastructure",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Infrastructure\\MedStoreAPI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Service\\MedStoreAPI.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Service\\MedStoreAPI.Service.csproj",
+        "projectName": "MedStoreAPI.Service",
+        "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Service\\MedStoreAPI.Service.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Common\\MedStoreAPI.Common.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Domain\\MedStoreAPI.Domain.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Dtos\\MedStoreAPI.Dtos.csproj"
+              },
+              "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj": {
+                "projectPath": "D:\\MedicalStore\\MedStoreAPI\\MedStoreAPI.Entities\\MedStoreAPI.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

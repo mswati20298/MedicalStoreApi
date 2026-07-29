@@ -1,0 +1,761 @@
+[
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Users.UsersLoginRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Users.UsersRegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.BatchesController",
+    "Method": "Add",
+    "RelativePath": "api/batch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Batches.BatchesRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.BatchesController",
+    "Method": "Delete",
+    "RelativePath": "api/batch/{batchID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "batchID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.BatchesController",
+    "Method": "GetByMedicine",
+    "RelativePath": "api/batch/by-medicine/{medicineID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicineID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.BatchesController",
+    "Method": "GetExpiring",
+    "RelativePath": "api/batch/expiring",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.BatchesController",
+    "Method": "GetExpiryStatus",
+    "RelativePath": "api/batch/expiry-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "redDays",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "yellowDays",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.BatchesController",
+    "Method": "GetLowStock",
+    "RelativePath": "api/batch/low-stock",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CategoriesController",
+    "Method": "Add",
+    "RelativePath": "api/category",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Categories.CategoriesRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CategoriesController",
+    "Method": "GetAll",
+    "RelativePath": "api/category",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CategoriesController",
+    "Method": "Update",
+    "RelativePath": "api/category",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Categories.CategoriesUpdateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CategoriesController",
+    "Method": "Delete",
+    "RelativePath": "api/category/{categoryID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomersController",
+    "Method": "Add",
+    "RelativePath": "api/customer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Customers.CustomersRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomersController",
+    "Method": "GetAll",
+    "RelativePath": "api/customer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomersController",
+    "Method": "GetByMobile",
+    "RelativePath": "api/customer/by-mobile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mobile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomerCreditsController",
+    "Method": "Add",
+    "RelativePath": "api/customercredit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.CustomerCredits.CustomerCreditsRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomerCreditsController",
+    "Method": "AddPayment",
+    "RelativePath": "api/customercredit/add-payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.CustomerCredits.CustomerCreditsAddPaymentRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomerCreditsController",
+    "Method": "GetByCustomer",
+    "RelativePath": "api/customercredit/by-customer/{customerID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.CustomerCreditsController",
+    "Method": "GetPending",
+    "RelativePath": "api/customercredit/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.DashboardController",
+    "Method": "GetSummary",
+    "RelativePath": "api/dashboard/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.GSTSlabsController",
+    "Method": "Add",
+    "RelativePath": "api/gstslab",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.GSTSlabs.GSTSlabsRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.GSTSlabsController",
+    "Method": "GetAll",
+    "RelativePath": "api/gstslab",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.InvoicesController",
+    "Method": "Create",
+    "RelativePath": "api/invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Invoices.InvoicesCreateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.InvoicesController",
+    "Method": "GetByDateRange",
+    "RelativePath": "api/invoice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fromDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "toDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.InvoicesController",
+    "Method": "GetByID",
+    "RelativePath": "api/invoice/{invoiceID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.InvoicesController",
+    "Method": "Cancel",
+    "RelativePath": "api/invoice/{invoiceID}/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.InvoicesController",
+    "Method": "GetDailySummary",
+    "RelativePath": "api/invoice/daily-summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.MedicinesController",
+    "Method": "Add",
+    "RelativePath": "api/medicine",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Medicines.MedicinesRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.MedicinesController",
+    "Method": "Update",
+    "RelativePath": "api/medicine",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Medicines.MedicinesUpdateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.MedicinesController",
+    "Method": "GetAll",
+    "RelativePath": "api/medicine",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.MedicinesController",
+    "Method": "GetByID",
+    "RelativePath": "api/medicine/{medicineID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicineID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.MedicinesController",
+    "Method": "Delete",
+    "RelativePath": "api/medicine/{medicineID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicineID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.MedicinesController",
+    "Method": "Search",
+    "RelativePath": "api/medicine/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.PaymentModesController",
+    "Method": "Add",
+    "RelativePath": "api/paymentmode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.PaymentModes.PaymentModesRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.PaymentModesController",
+    "Method": "GetAll",
+    "RelativePath": "api/paymentmode",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.StoresController",
+    "Method": "Add",
+    "RelativePath": "api/store",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Stores.StoresRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.StoresController",
+    "Method": "GetAll",
+    "RelativePath": "api/store",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.StoresController",
+    "Method": "Update",
+    "RelativePath": "api/store",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Stores.StoresUpdateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.StoresController",
+    "Method": "GetByID",
+    "RelativePath": "api/store/{storeID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.StoresController",
+    "Method": "UploadLogo",
+    "RelativePath": "api/store/{storeID}/logo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "logoFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.SuppliersController",
+    "Method": "Add",
+    "RelativePath": "api/supplier",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Suppliers.SuppliersRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.SuppliersController",
+    "Method": "Update",
+    "RelativePath": "api/supplier",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Suppliers.SuppliersUpdateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.SuppliersController",
+    "Method": "GetAll",
+    "RelativePath": "api/supplier",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.SuppliersController",
+    "Method": "GetByID",
+    "RelativePath": "api/supplier/{supplierID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supplierID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.SuppliersController",
+    "Method": "Delete",
+    "RelativePath": "api/supplier/{supplierID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supplierID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.UnitsController",
+    "Method": "Add",
+    "RelativePath": "api/unit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Units.UnitsRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.UnitsController",
+    "Method": "GetAll",
+    "RelativePath": "api/unit",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.UsersController",
+    "Method": "GetByStore",
+    "RelativePath": "api/user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.UsersController",
+    "Method": "GetByID",
+    "RelativePath": "api/user/{userID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.UsersController",
+    "Method": "Deactivate",
+    "RelativePath": "api/user/{userID}/deactivate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedStoreAPI.API.Controllers.UsersController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/user/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MedStoreAPI.Dtos.Users.UsersChangePasswordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,11 @@
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\bin\Debug\net8.0\MedStoreAPI.Dtos.deps.json
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\bin\Debug\net8.0\MedStoreAPI.Dtos.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\bin\Debug\net8.0\MedStoreAPI.Dtos.pdb
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\MedStoreAPI.Dtos.GeneratedMSBuildEditorConfig.editorconfig
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\MedStoreAPI.Dtos.AssemblyInfoInputs.cache
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\MedStoreAPI.Dtos.AssemblyInfo.cs
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\MedStoreAPI.Dtos.csproj.CoreCompileInputs.cache
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\MedStoreAPI.Dtos.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\refint\MedStoreAPI.Dtos.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\MedStoreAPI.Dtos.pdb
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Dtos\obj\Debug\net8.0\ref\MedStoreAPI.Dtos.dll

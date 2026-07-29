@@ -1,0 +1,12 @@
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\bin\Debug\net8.0\MedStoreAPI.Common.deps.json
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\bin\Debug\net8.0\MedStoreAPI.Common.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\bin\Debug\net8.0\MedStoreAPI.Common.pdb
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.csproj.AssemblyReference.cache
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.AssemblyInfoInputs.cache
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.AssemblyInfo.cs
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.csproj.CoreCompileInputs.cache
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\refint\MedStoreAPI.Common.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\MedStoreAPI.Common.pdb
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Common\obj\Debug\net8.0\ref\MedStoreAPI.Common.dll

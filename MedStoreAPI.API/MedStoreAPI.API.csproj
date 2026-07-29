@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedStoreAPI.Domain\MedStoreAPI.Domain.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Dtos\MedStoreAPI.Dtos.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Entities\MedStoreAPI.Entities.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Service\MedStoreAPI.Service.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Common\MedStoreAPI.Common.csproj" />
+    <ProjectReference Include="..\MedStoreAPI.Infrastructure\MedStoreAPI.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

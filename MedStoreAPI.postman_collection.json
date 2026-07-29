@@ -1,0 +1,1263 @@
+{
+  "info": {
+    "name": "MedStoreAPI",
+    "description": "Author: Mahesh Kumar | Date: 26/07/2026 | Collection covering Customers, Medicines, Suppliers, Batches, Invoices, CustomerCredits, Dashboard modules.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:65006"
+    },
+    {
+      "key": "storeId",
+      "value": "1"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"roleID\": 1,\n  \"fullName\": \"Mahesh Kumar\",\n  \"username\": \"mahesh.owner\",\n  \"password\": \"YourStrongPassword123\",\n  \"email\": \"mahesh@techtalkmedical.com\",\n  \"mobile\": \"9876543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res && res.data && res.data.token) {",
+                  "    pm.collectionVariables.set('token', res.data.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"mahesh.owner\",\n  \"password\": \"YourStrongPassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        }
+      ],
+      "auth": {
+        "type": "noauth"
+      }
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/user/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Users By Store",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/user?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "user"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userID\": 1,\n  \"newPassword\": \"NewStrongPassword456\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/user/change-password",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "change-password"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Deactivate User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/user/1/deactivate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "1",
+                "deactivate"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stores",
+      "item": [
+        {
+          "name": "Add Store",
+          "auth": {
+            "type": "noauth"
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeName\": \"Shiva Medical\",\n  \"address\": \"MG Road\",\n  \"city\": \"Lucknow\",\n  \"state\": \"Uttar Pradesh\",\n  \"pincode\": \"226001\",\n  \"gstin\": \"09ABCDE1234F1Z5\",\n  \"drugLicenseNumber\": \"DL-UP-2024-00456\",\n  \"contactNumber\": \"9876500002\",\n  \"email\": \"contact@shivamedical.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/store",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "store"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Stores",
+          "auth": {
+            "type": "noauth"
+          },
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/store",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "store"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Store By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/store/{{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "store",
+                "{{storeId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Store",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"storeName\": \"Shiva Medical Store\",\n  \"address\": \"MG Road\",\n  \"city\": \"Lucknow\",\n  \"state\": \"Uttar Pradesh\",\n  \"pincode\": \"226001\",\n  \"gstin\": \"09ABCDE1234F1Z5\",\n  \"drugLicenseNumber\": \"DL-UP-2024-00456\",\n  \"contactNumber\": \"9876500002\",\n  \"email\": \"contact@shivamedical.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/store",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "store"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Upload Logo",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "logoFile",
+                  "type": "file",
+                  "src": ""
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/store/{{storeId}}/logo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "store",
+                "{{storeId}}",
+                "logo"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Add Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"name\": \"Ramesh Yadav\",\n  \"mobile\": \"9911223344\",\n  \"address\": \"Aliganj, Lucknow\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/customer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customer"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Customer By Mobile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/customer/by-mobile?storeID={{storeId}}&mobile=9911223344",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customer",
+                "by-mobile"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                },
+                {
+                  "key": "mobile",
+                  "value": "9911223344"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/customer?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customer"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medicines",
+      "item": [
+        {
+          "name": "Add Medicine",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"name\": \"Paracetamol 500mg\",\n  \"composition\": \"Paracetamol 500mg\",\n  \"manufacturer\": \"Sun Pharma\",\n  \"categoryID\": 1,\n  \"unitID\": 1,\n  \"gstSlabID\": 2,\n  \"hsnCode\": \"30049099\",\n  \"prescriptionRequired\": false,\n  \"reorderPoint\": 50,\n  \"maxStockLevel\": 300\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/medicine",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "medicine"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Medicine",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"medicineID\": 1,\n  \"storeID\": {{storeId}},\n  \"name\": \"Paracetamol 500mg\",\n  \"composition\": \"Paracetamol 500mg\",\n  \"manufacturer\": \"Sun Pharma\",\n  \"categoryID\": 1,\n  \"unitID\": 1,\n  \"gstSlabID\": 2,\n  \"hsnCode\": \"30049099\",\n  \"prescriptionRequired\": false,\n  \"reorderPoint\": 60,\n  \"maxStockLevel\": 300\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/medicine",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "medicine"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Medicine By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/medicine/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "medicine",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Medicines",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/medicine?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "medicine"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Medicines",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/medicine/search?storeID={{storeId}}&searchTerm=para",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "medicine",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                },
+                {
+                  "key": "searchTerm",
+                  "value": "para"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Medicine",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/medicine/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "medicine",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Suppliers",
+      "item": [
+        {
+          "name": "Add Supplier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"supplierName\": \"Sun Pharma Distributors\",\n  \"contactPerson\": \"Amit Verma\",\n  \"contactNumber\": \"9812345678\",\n  \"email\": \"amit@sunpharmadist.com\",\n  \"address\": \"Sector 10, Lucknow\",\n  \"returnPolicyDays\": 90,\n  \"gstin\": \"09XXXXX1111X1Z1\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/supplier",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "supplier"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Suppliers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/supplier?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "supplier"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Supplier By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/supplier/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "supplier",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Supplier",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/supplier/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "supplier",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Batches",
+      "item": [
+        {
+          "name": "Add Batch",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"medicineID\": 1,\n  \"supplierID\": 1,\n  \"batchNumber\": \"PCM-B003\",\n  \"expiryDate\": \"2027-12-31\",\n  \"manufactureDate\": \"2026-06-01\",\n  \"quantityReceived\": 200,\n  \"purchasePrice\": 15.00,\n  \"mrp\": 22.00,\n  \"dateReceived\": \"2026-07-26\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/batch",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "batch"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Batches By Medicine (FEFO)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/batch/by-medicine/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "batch",
+                "by-medicine",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Expiry Status (Red/Yellow/Green)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/batch/expiry-status?storeID={{storeId}}&redDays=30&yellowDays=90",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "batch",
+                "expiry-status"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                },
+                {
+                  "key": "redDays",
+                  "value": "30"
+                },
+                {
+                  "key": "yellowDays",
+                  "value": "90"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Expiring Batches",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/batch/expiring?storeID={{storeId}}&days=30",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "batch",
+                "expiring"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                },
+                {
+                  "key": "days",
+                  "value": "30"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Low Stock",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/batch/low-stock?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "batch",
+                "low-stock"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Batch",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/batch/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "batch",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Invoices",
+      "item": [
+        {
+          "name": "Create Invoice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"customerID\": 1,\n  \"paymentModeID\": 1,\n  \"discountAmount\": 0,\n  \"createdBy\": 1,\n  \"items\": [\n    {\n      \"batchID\": 1,\n      \"medicineID\": 1,\n      \"quantity\": 2,\n      \"unitPrice\": 22.00,\n      \"gstPercentage\": 5\n    },\n    {\n      \"batchID\": 3,\n      \"medicineID\": 2,\n      \"quantity\": 1,\n      \"unitPrice\": 65.00,\n      \"gstPercentage\": 12\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/invoice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "invoice"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Invoice By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/invoice/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "invoice",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Invoices By Date Range",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/invoice?storeID={{storeId}}&fromDate=2026-07-01&toDate=2026-07-31",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "invoice"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                },
+                {
+                  "key": "fromDate",
+                  "value": "2026-07-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-07-31"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cancel Invoice",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/invoice/1/cancel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "invoice",
+                "1",
+                "cancel"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Daily Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/invoice/daily-summary?storeID={{storeId}}&invoiceDate=2026-07-26",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "invoice",
+                "daily-summary"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                },
+                {
+                  "key": "invoiceDate",
+                  "value": "2026-07-26"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CustomerCredits",
+      "item": [
+        {
+          "name": "Add Credit (Udhaar)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeID\": {{storeId}},\n  \"customerID\": 1,\n  \"invoiceID\": 1,\n  \"amount\": 500.00,\n  \"dueDate\": \"2026-08-15\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/customercredit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customercredit"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Pending Credits",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/customercredit/pending?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customercredit",
+                "pending"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Credits By Customer",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/customercredit/by-customer/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customercredit",
+                "by-customer",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"creditID\": 1,\n  \"amountPaid\": 200.00,\n  \"paymentModeID\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/customercredit/add-payment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "customercredit",
+                "add-payment"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Get Dashboard Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard/summary?storeID={{storeId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dashboard",
+                "summary"
+              ],
+              "query": [
+                {
+                  "key": "storeID",
+                  "value": "{{storeId}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Master Data",
+      "item": [
+        {
+          "name": "Add Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryName\": \"Tablet\",\n  \"parentCategoryID\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryID\": 1,\n  \"categoryName\": \"Tablets\",\n  \"parentCategoryID\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/category/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add Unit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"unitName\": \"Strip\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/unit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "unit"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Units",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/unit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "unit"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add GST Slab",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"percentage\": 12\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/gstslab",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "gstslab"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All GST Slabs",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/gstslab",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "gstslab"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add Payment Mode",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"modeName\": \"UPI\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/paymentmode",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paymentmode"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Payment Modes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/paymentmode",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paymentmode"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  }
+}
