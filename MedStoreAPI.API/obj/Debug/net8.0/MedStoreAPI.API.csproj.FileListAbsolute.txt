@@ -84,3 +84,4 @@ D:\MedicalStore\MedStoreAPI\MedStoreAPI.API\obj\Debug\net8.0\ref\MedStoreAPI.API
 D:\MedicalStore\MedStoreAPI\MedStoreAPI.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\MedicalStore\MedStoreAPI\MedStoreAPI.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\MedicalStore\MedStoreAPI\MedStoreAPI.API\bin\Debug\net8.0\MedStoreAPI.API.staticwebassets.runtime.json
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.API\obj\Debug\net8.0\MedStoreAPI.API.sourcelink.json

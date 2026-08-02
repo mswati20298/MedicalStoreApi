@@ -60,6 +60,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Update([FromBody] StoresUpdateRequestDto request)
         {
             if (request.StoreID != CurrentStoreID)
@@ -76,6 +77,7 @@ namespace MedStoreAPI.API.Controllers
         /// with a single file field named "logoFile".
         /// </summary>
         [HttpPost("{storeID:int}/logo")]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> UploadLogo(int storeID, IFormFile logoFile)
         {
             if (storeID != CurrentStoreID)

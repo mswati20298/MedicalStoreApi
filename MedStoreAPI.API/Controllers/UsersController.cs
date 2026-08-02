@@ -1,5 +1,6 @@
 using MedStoreAPI.Dtos.Users;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedStoreAPI.API.Controllers
@@ -13,6 +14,7 @@ namespace MedStoreAPI.API.Controllers
     /// </summary>
     [ApiController]
     [Route("api/user")]
+    [Authorize(Roles = "Owner")]
     public class UsersController : SecureControllerBase
     {
         private readonly IUsersService _usersService;

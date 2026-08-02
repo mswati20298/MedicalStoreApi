@@ -1,5 +1,6 @@
 using MedStoreAPI.Dtos.Suppliers;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedStoreAPI.API.Controllers
@@ -11,6 +12,7 @@ namespace MedStoreAPI.API.Controllers
     /// </summary>
     [ApiController]
     [Route("api/supplier")]
+    [Authorize(Roles = "Owner,Pharmacist")]
     public class SuppliersController : SecureControllerBase
     {
         private readonly ISuppliersService _suppliersService;

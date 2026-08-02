@@ -2,6 +2,7 @@ using MedStoreAPI.Dtos.GSTSlabs;
 using MedStoreAPI.Dtos.PaymentModes;
 using MedStoreAPI.Dtos.Units;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedStoreAPI.API.Controllers
@@ -21,6 +22,7 @@ namespace MedStoreAPI.API.Controllers
         public UnitsController(IUnitsService unitsService) => _unitsService = unitsService;
 
         [HttpPost]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Add([FromBody] UnitsRequestDto request)
         {
             var result = await _unitsService.AddAsync(request);
@@ -39,6 +41,7 @@ namespace MedStoreAPI.API.Controllers
         public GSTSlabsController(IGSTSlabsService gstSlabsService) => _gstSlabsService = gstSlabsService;
 
         [HttpPost]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Add([FromBody] GSTSlabsRequestDto request)
         {
             var result = await _gstSlabsService.AddAsync(request);
@@ -57,6 +60,7 @@ namespace MedStoreAPI.API.Controllers
         public PaymentModesController(IPaymentModesService paymentModesService) => _paymentModesService = paymentModesService;
 
         [HttpPost]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Add([FromBody] PaymentModesRequestDto request)
         {
             var result = await _paymentModesService.AddAsync(request);
