@@ -150,4 +150,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
+Console.WriteLine($"Content Root: {app.Environment.ContentRootPath}");
+Console.WriteLine($"Web Root: {app.Environment.WebRootPath}");
 app.Run();
