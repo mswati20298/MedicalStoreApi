@@ -1,5 +1,6 @@
 using MedStoreAPI.Dtos.Categories;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedStoreAPI.API.Controllers
@@ -24,6 +25,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Add([FromBody] CategoriesRequestDto request)
         {
             var result = await _categoriesService.AddAsync(request);
@@ -38,6 +40,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Update([FromBody] CategoriesUpdateRequestDto request)
         {
             var result = await _categoriesService.UpdateAsync(request);
@@ -45,6 +48,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpDelete("{categoryID:int}")]
+        [Authorize(Roles = "Owner")]
         public async Task<IActionResult> Delete(int categoryID)
         {
             var result = await _categoriesService.DeleteAsync(categoryID);

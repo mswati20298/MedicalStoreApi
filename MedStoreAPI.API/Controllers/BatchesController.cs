@@ -1,5 +1,6 @@
 using MedStoreAPI.Dtos.Batches;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedStoreAPI.API.Controllers
@@ -22,6 +23,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Owner,Pharmacist")]
         public async Task<IActionResult> Add([FromBody] BatchesRequestDto request)
         {
             request.StoreID = CurrentStoreID;
@@ -60,6 +62,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpDelete("{batchID:int}")]
+        [Authorize(Roles = "Owner,Pharmacist")]
         public async Task<IActionResult> Delete(int batchID)
         {
             var result = await _batchesService.DeleteBatchAsync(batchID, CurrentStoreID);

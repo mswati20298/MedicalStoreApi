@@ -1,5 +1,6 @@
 using MedStoreAPI.Dtos.Medicines;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedStoreAPI.API.Controllers
@@ -23,6 +24,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Owner,Pharmacist")]
         public async Task<IActionResult> Add([FromBody] MedicinesRequestDto request)
         {
             request.StoreID = CurrentStoreID;
@@ -31,6 +33,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Owner,Pharmacist")]
         public async Task<IActionResult> Update([FromBody] MedicinesUpdateRequestDto request)
         {
             request.StoreID = CurrentStoreID;
@@ -61,6 +64,7 @@ namespace MedStoreAPI.API.Controllers
         }
 
         [HttpDelete("{medicineID:int}")]
+        [Authorize(Roles = "Owner,Pharmacist")]
         public async Task<IActionResult> Delete(int medicineID)
         {
             var result = await _medicinesService.DeleteMedicineAsync(medicineID, CurrentStoreID);
