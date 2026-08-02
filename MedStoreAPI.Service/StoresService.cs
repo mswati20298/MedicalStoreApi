@@ -3,6 +3,7 @@ using MedStoreAPI.Domain;
 using MedStoreAPI.Dtos.Stores;
 using MedStoreAPI.Entities.Repositories;
 using MedStoreAPI.Entities.Services;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
 namespace MedStoreAPI.Service
@@ -19,12 +20,15 @@ namespace MedStoreAPI.Service
     public class StoresService : IStoresService
     {
         private readonly IStoresRepository _storesRepository;
+        private readonly IWebHostEnvironment _environment;
         private static readonly string[] AllowedExtensions = { ".jpg", ".jpeg", ".png", ".webp" };
         private const long MaxLogoSizeBytes = 2 * 1024 * 1024; // 2 MB
 
-        public StoresService(IStoresRepository storesRepository)
+        public StoresService(IStoresRepository storesRepository,
+            IWebHostEnvironment environment)
         {
             _storesRepository = storesRepository;
+            _environment = environment;
         }
 
         public async Task<ApiResponse<StoresResponseDto>> AddStoreAsync(StoresRequestDto request)
@@ -124,7 +128,7 @@ namespace MedStoreAPI.Service
                 return ApiResponse<string>.Fail("Only .jpg, .jpeg, .png, .webp files are allowed.");
             }
 
-            var uploadsFolder = Path.Combine(AppContext.BaseDirectory, "wwwroot", "uploads", "logos");
+            var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads", "logos");
             Directory.CreateDirectory(uploadsFolder);
 
             var fileName = $"{storeID}_{Guid.NewGuid()}{extension}";

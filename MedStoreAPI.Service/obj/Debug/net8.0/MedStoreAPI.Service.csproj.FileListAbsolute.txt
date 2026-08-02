@@ -19,3 +19,4 @@ D:\MedicalStore\MedStoreAPI\MedStoreAPI.Service\obj\Debug\net8.0\MedStoreAPI.Ser
 D:\MedicalStore\MedStoreAPI\MedStoreAPI.Service\obj\Debug\net8.0\refint\MedStoreAPI.Service.dll
 D:\MedicalStore\MedStoreAPI\MedStoreAPI.Service\obj\Debug\net8.0\MedStoreAPI.Service.pdb
 D:\MedicalStore\MedStoreAPI\MedStoreAPI.Service\obj\Debug\net8.0\ref\MedStoreAPI.Service.dll
+D:\MedicalStore\MedStoreAPI\MedStoreAPI.Service\obj\Debug\net8.0\MedStoreAPI.Service.sourcelink.json
