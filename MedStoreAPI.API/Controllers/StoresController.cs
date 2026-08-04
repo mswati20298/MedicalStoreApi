@@ -2,6 +2,7 @@ using MedStoreAPI.Dtos.Stores;
 using MedStoreAPI.Entities.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace MedStoreAPI.API.Controllers
 {
@@ -33,6 +34,7 @@ namespace MedStoreAPI.API.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [EnableRateLimiting("AuthPolicy")]
         public async Task<IActionResult> Add([FromBody] StoresRequestDto request)
         {
             var result = await _storesService.AddStoreAsync(request);

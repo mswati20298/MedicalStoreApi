@@ -1,10 +1,12 @@
 using System.Text;
+using System.Threading.RateLimiting;
 using MedStoreAPI.Common;
 using MedStoreAPI.Entities.Repositories;
 using MedStoreAPI.Entities.Services;
 using MedStoreAPI.Infrastructure.Repositories;
 using MedStoreAPI.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -135,21 +137,86 @@ builder.Services.AddScoped<IGSTSlabsService, GSTSlabsService>();
 builder.Services.AddScoped<IPaymentModesRepository, PaymentModesRepository>();
 builder.Services.AddScoped<IPaymentModesService, PaymentModesService>();
 
+// -----------------------------------------------------
+// Author: Mahesh Kumar
+// Date: 01/08/2026
+// Description: Rate limiting for authentication endpoints (login, register,
+// forgot-password). Built into ASP.NET Core (no extra NuGet package needed).
+// Keyed per-client-IP so one abusive IP can't lock out/spam-brute-force the
+// login or forgot-password flow for everyone else. Applied via
+// [EnableRateLimiting("AuthPolicy")] on AuthController specifically - not
+// applied globally, so normal app usage (Billing, Medicines, etc.) is
+// completely unaffected.
+// -----------------------------------------------------
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    options.AddPolicy("AuthPolicy", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                Window = TimeSpan.FromMinutes(1),
+                PermitLimit = 5, // max 5 login/register/forgot-password attempts per IP per minute
+                QueueLimit = 0,
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+            }));
+
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.ContentType = "application/json";
+        var response = ApiResponse<object>.Fail("Too many attempts. Please wait a minute and try again.");
+        await context.HttpContext.Response.WriteAsJsonAsync(response, cancellationToken);
+    };
+});
+
 var app = builder.Build();
 
+// -----------------------------------------------------
+// Author: Mahesh Kumar
+// Date: 01/08/2026
+// Description: Global exception handling. In Development we keep the
+// detailed developer exception page (useful while building). In every
+// other environment, ANY unhandled exception is caught here, logged
+// server-side (never shown to the client), and converted into the same
+// ApiResponse<T> shape every other endpoint already returns - so the
+// frontend never has to special-case a raw 500 HTML/stack-trace response.
+// -----------------------------------------------------
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseExceptionHandler(errorApp =>
+    {
+        errorApp.Run(async context =>
+        {
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+
+            var exceptionFeature = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
+            if (exceptionFeature is not null)
+            {
+                var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+                logger.LogError(exceptionFeature.Error, "Unhandled exception on {Path}", context.Request.Path);
+            }
+
+            var response = ApiResponse<object>.Fail("Something went wrong on our end. Please try again in a moment.");
+            await context.Response.WriteAsJsonAsync(response);
+        });
+    });
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles(); // serves wwwroot/uploads/logos/* so LogoUrl paths are directly accessible
 app.UseCors("AllowAngularApp");
+app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-Console.WriteLine($"Content Root: {app.Environment.ContentRootPath}");
-Console.WriteLine($"Web Root: {app.Environment.WebRootPath}");
 app.Run();

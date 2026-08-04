@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedStoreAPI.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63693ca76f7829ea8ca4ab4f5826b1d5d56a1e5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0304166b3699cdab7506dbaea01adf2e7898ae8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedStoreAPI.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedStoreAPI.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
