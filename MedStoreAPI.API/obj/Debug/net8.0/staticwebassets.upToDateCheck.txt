@@ -1,1 +1,2 @@
 wwwroot\uploads\logos\.gitkeep
+wwwroot\uploads\logos\6_98f265e6-9779-4405-97b8-6a0a416f599d.png
